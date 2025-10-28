@@ -14,12 +14,12 @@ namespace FirstAPI.Services
             var key = Encoding.ASCII.GetBytes(Key.Secret);
             var tokenConfig = new SecurityTokenDescriptor
             {
-                Subject = new System.Security.Claims.ClaimsIdentity(new Claim[]
+                Subject = new ClaimsIdentity(new Claim[]
                 {
-                    new Claim("carroId", carro.id.ToString()),
+                      new Claim("carroid", carro.id.ToString()),
                 }),
                 Expires = DateTime.UtcNow.AddHours(3),
-                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(Key), SecurityAlgorithms.HmacSha256Signature)
+                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
             };
 
             var tokenHandler = new JwtSecurityTokenHandler();
@@ -28,7 +28,8 @@ namespace FirstAPI.Services
 
             return new
             {
-                token = tokenString;
+                token = tokenString
+            };
         }
     }
 }

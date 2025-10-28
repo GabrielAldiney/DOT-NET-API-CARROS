@@ -2,6 +2,7 @@
 using FirstAPI.ViewModel;
 using FirstAPI.Infraestrutura;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 
 namespace FirstAPI.Controllers
 {
@@ -15,7 +16,7 @@ namespace FirstAPI.Controllers
         {
             _carroRepository = carroRepository ?? throw new ArgumentNullException(nameof(carroRepository));
         }
-
+        [Authorize]
         [HttpPost]
         public IActionResult add([FromForm] CarroViewModel carroView)
         {
@@ -38,7 +39,7 @@ namespace FirstAPI.Controllers
 
             return Ok();
         }
-
+        [Authorize]
         [HttpPost]
         [Route("{id}/download")]
         public IActionResult DownloadPhoto(int id)
@@ -48,7 +49,7 @@ namespace FirstAPI.Controllers
             return File(dataBytes, "image/png");
         }
 
-
+        [Authorize]
         [HttpGet]
         public IActionResult Get()
         {

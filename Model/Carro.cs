@@ -12,6 +12,7 @@ namespace FirstAPI.Model
         public int age { get; private set; }
         public string photo { get; private set; }
 
+        public Carro() { }
         public Carro(string name, int age, string photo)
         {
             this.name = name ?? throw new ArgumentNullException(nameof(name));
