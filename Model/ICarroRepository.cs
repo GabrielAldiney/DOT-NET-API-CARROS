@@ -7,7 +7,7 @@ namespace FirstAPI.Infraestrutura
         // Os métodos aqui devem ser idênticos aos métodos
         // públicos do seu CarroRepository
         void add(Carro carro);
-        List<Carro> Get();
+        List<Carro> Get(int pageNumber, int pageQuantity);
 
         Carro? Get(int id);
     }

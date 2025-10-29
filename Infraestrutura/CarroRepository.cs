@@ -20,9 +20,9 @@ namespace FirstAPI.Infraestrutura
             _context.SaveChanges();
         }
 
-        public List<Carro> Get()
+        public List<Carro> Get(int pageNumber, int pageQuantity)
         {
-            return _context.Carros.ToList();
+            return _context.Carros.Skip(pageNumber * pageQuantity).Take(pageQuantity).ToList();
         }
 
         public Carro? Get(int id)

@@ -5,6 +5,7 @@ using System.Text; // Para o UseNpgsql
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using Microsoft.AspNetCore.Builder;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -93,8 +94,13 @@ var app = builder.Build();
 // Em ambiente de desenvolvimento, mostre a UI do Swagger
 if (app.Environment.IsDevelopment())
 {
+    app.UseExceptionHandler("/error") ;
     app.UseSwagger();
     app.UseSwaggerUI();
+}
+else
+{
+    app.UseExceptionHandler("/error");
 }
 
 // Redireciona HTTP para HTTPS
