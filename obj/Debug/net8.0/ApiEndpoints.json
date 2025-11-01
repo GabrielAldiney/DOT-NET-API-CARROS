@@ -69,6 +69,22 @@
   },
   {
     "ContainingType": "FirstAPI.Controllers.CarroController",
+    "Method": "Search",
+    "RelativePath": "api/v1/carro/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FirstAPI.Controllers.CarroController",
     "Method": "DownloadPhoto",
     "RelativePath": "api/v1/carro/{id}/download",
     "HttpMethod": "POST",

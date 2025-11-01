@@ -1,8 +1,10 @@
-﻿using FirstAPI.Model;
-using FirstAPI.ViewModel;
-using FirstAPI.Infraestrutura;
+﻿using FirstAPI.Infraestrutura;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
+using FirstAPI.Domain.Model;
+using FirstAPI.Application.ViewModel;
+using AutoMapper;
+using FirstAPI.Domain.DTOs;
 
 namespace FirstAPI.Controllers
 {
@@ -12,11 +14,13 @@ namespace FirstAPI.Controllers
     {
         private readonly ICarroRepository _carroRepository;
         private readonly ILogger<CarroController> _logger;
+        private readonly IMapper _mapper;
 
-        public CarroController(ICarroRepository carroRepository, ILogger<CarroController> logger)
+        public CarroController(ICarroRepository carroRepository, ILogger<CarroController> logger, IMapper mapper)
         {
             _carroRepository = carroRepository ?? throw new ArgumentNullException(nameof(carroRepository));
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
+            _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
         }
 
         [HttpPost]
@@ -55,14 +59,31 @@ namespace FirstAPI.Controllers
         public IActionResult Get(int pageNumber, int pageQuantity)
         {
             _logger.Log(LogLevel.Error, "Teve um erro");
-
-            throw new Exception("Erro de teste");
             
             var carros = _carroRepository.Get(pageNumber, pageQuantity);
 
             _logger.LogInformation("teste");
 
             return Ok(carros);
+        }
+
+        [HttpGet]
+        [Route("{id}")]
+        public IActionResult Search(int id)
+        {
+
+            try
+            {
+                var carros = _carroRepository.Get(id);
+                var carrosDTOs = _mapper.Map<CarroDTO>(carros);
+                return Ok(carrosDTOs);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
+
+
         }
     }
 }

@@ -2,10 +2,10 @@
 using System.Security.Claims;
 using System.Security.Permissions;
 using System.Text;
-using FirstAPI.Model;
+using FirstAPI.Domain.Model;
 using Microsoft.IdentityModel.Tokens;
 
-namespace FirstAPI.Services
+namespace FirstAPI.Application.Services
 {
     public class TokenService
     {

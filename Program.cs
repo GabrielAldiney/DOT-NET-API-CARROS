@@ -1,11 +1,12 @@
 using FirstAPI.Infrastructure;    // Para o ConnectionContext
-using FirstAPI.Infraestrutura; // Para CarroRepository e ICarroRepository
 using Microsoft.EntityFrameworkCore;
 using System.Text; // Para o UseNpgsql
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Microsoft.AspNetCore.Builder;
+using FirstAPI.Domain.Model;
+using FirstAPI.Infraestrutura.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,6 +15,7 @@ var builder = WebApplication.CreateBuilder(args);
 // 1. Adiciona os serviços de controladores (API)
 builder.Services.AddControllers();
 
+builder.Services.AddAutoMapper(typeof(DomainToDTOMapping));
 // 2. Adiciona o Swagger para documentação e teste da API
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>

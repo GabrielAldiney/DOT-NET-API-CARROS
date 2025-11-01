@@ -121,3 +121,5 @@ C:\Users\GabrielAldiney\source\repos\FirstAPI\FirstAPI\obj\Debug\net8.0\refint\F
 C:\Users\GabrielAldiney\source\repos\FirstAPI\FirstAPI\obj\Debug\net8.0\FirstAPI.pdb
 C:\Users\GabrielAldiney\source\repos\FirstAPI\FirstAPI\obj\Debug\net8.0\FirstAPI.genruntimeconfig.cache
 C:\Users\GabrielAldiney\source\repos\FirstAPI\FirstAPI\obj\Debug\net8.0\ref\FirstAPI.dll
+C:\Users\GabrielAldiney\source\repos\FirstAPI\FirstAPI\bin\Debug\net8.0\AutoMapper.dll
+C:\Users\GabrielAldiney\source\repos\FirstAPI\FirstAPI\bin\Debug\net8.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

@@ -1,13 +1,13 @@
-﻿using FirstAPI.Model; // Importante para ele saber o que é a classe 'Carro'
+﻿using FirstAPI.Domain.DTOs;
 
-namespace FirstAPI.Infraestrutura
+namespace FirstAPI.Domain.Model
 {
     public interface ICarroRepository
     {
         // Os métodos aqui devem ser idênticos aos métodos
         // públicos do seu CarroRepository
         void add(Carro carro);
-        List<Carro> Get(int pageNumber, int pageQuantity);
+        List<CarroDTO> Get(int pageNumber, int pageQuantity);
 
         Carro? Get(int id);
     }

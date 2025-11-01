@@ -1,5 +1,6 @@
-﻿using FirstAPI.Services;
+﻿using FirstAPI.Application.Services;
 using Microsoft.AspNetCore.Mvc;
+using FirstAPI.Domain.Model;
 
 namespace FirstAPI.Controllers
 {
@@ -12,7 +13,7 @@ namespace FirstAPI.Controllers
         {
             if (username == "gabriel" || password == "123456")
             {
-                var token = TokenService.GenerateToken(new Model.Carro());
+                var token = TokenService.GenerateToken(new Carro());
                 return Ok(token);
             }
             return BadRequest("Username or password invalid");

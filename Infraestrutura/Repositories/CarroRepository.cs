@@ -1,7 +1,8 @@
-﻿using FirstAPI.Model;
-using FirstAPI.Infrastructure; // <-- 1. ADICIONE ESTE USING
+﻿using FirstAPI.Infrastructure;
+using FirstAPI.Domain.Model;
+using FirstAPI.Domain.DTOs;
 
-namespace FirstAPI.Infraestrutura
+namespace FirstAPI.Infraestrutura.Repositories
 {
     public class CarroRepository : ICarroRepository
     {
@@ -20,9 +21,9 @@ namespace FirstAPI.Infraestrutura
             _context.SaveChanges();
         }
 
-        public List<Carro> Get(int pageNumber, int pageQuantity)
+        public List<CarroDTO> Get(int pageNumber, int pageQuantity)
         {
-            return _context.Carros.Skip(pageNumber * pageQuantity).Take(pageQuantity).ToList();
+            return _context.Carros.Skip(pageNumber * pageQuantity).Take(pageQuantity).Select(b => new CarroDTO { Id = b.id, NameCarro = b.name, Photo = b.photo }).ToList();
         }
 
         public Carro? Get(int id)

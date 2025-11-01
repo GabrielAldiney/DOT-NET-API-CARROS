@@ -1,4 +1,4 @@
-﻿namespace FirstAPI.ViewModel
+﻿namespace FirstAPI.Application.ViewModel
 {
     public class CarroViewModel
     {

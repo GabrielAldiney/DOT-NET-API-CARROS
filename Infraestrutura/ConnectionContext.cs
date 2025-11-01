@@ -1,4 +1,4 @@
-﻿using FirstAPI.Model; // Certifique-se de que o namespace do Model está correto
+﻿using FirstAPI.Domain.Model;
 using Microsoft.EntityFrameworkCore;
 
 namespace FirstAPI.Infrastructure
