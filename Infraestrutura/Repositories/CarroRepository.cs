@@ -1,6 +1,6 @@
 ﻿using FirstAPI.Infrastructure;
-using FirstAPI.Domain.Model;
 using FirstAPI.Domain.DTOs;
+using FirstAPI.Domain.Model.CarroAggregate;
 
 namespace FirstAPI.Infraestrutura.Repositories
 {

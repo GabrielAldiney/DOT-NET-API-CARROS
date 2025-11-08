@@ -1,6 +1,7 @@
 ﻿using FirstAPI.Application.Services;
 using Microsoft.AspNetCore.Mvc;
 using FirstAPI.Domain.Model;
+using FirstAPI.Domain.Model.CarroAggregate;
 
 namespace FirstAPI.Controllers
 {

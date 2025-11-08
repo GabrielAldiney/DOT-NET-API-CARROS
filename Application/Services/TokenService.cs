@@ -2,7 +2,7 @@
 using System.Security.Claims;
 using System.Security.Permissions;
 using System.Text;
-using FirstAPI.Domain.Model;
+using FirstAPI.Domain.Model.CarroAggregate;
 using Microsoft.IdentityModel.Tokens;
 
 namespace FirstAPI.Application.Services

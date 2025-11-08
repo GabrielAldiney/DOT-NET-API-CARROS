@@ -1,7 +1,7 @@
 {
   "openapi": "3.0.1",
   "info": {
-    "title": "FirstAPI",
+    "title": "Web.API - Filipe Brito Dev",
     "version": "1.0"
   },
   "paths": {
@@ -23,6 +23,15 @@
             "in": "query",
             "schema": {
               "type": "string"
+            }
+          },
+          {
+            "name": "api-version",
+            "in": "query",
+            "description": "The requested API version",
+            "schema": {
+              "type": "string",
+              "default": "1.0"
             }
           }
         ],
@@ -158,6 +167,17 @@
           "WeatherForecast"
         ],
         "operationId": "GetWeatherForecast",
+        "parameters": [
+          {
+            "name": "api-version",
+            "in": "query",
+            "description": "The requested API version",
+            "schema": {
+              "type": "string",
+              "default": "1.0"
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "OK",

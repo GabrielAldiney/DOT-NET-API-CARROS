@@ -1,15 +1,16 @@
 ﻿using FirstAPI.Infraestrutura;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
-using FirstAPI.Domain.Model;
 using FirstAPI.Application.ViewModel;
 using AutoMapper;
 using FirstAPI.Domain.DTOs;
+using FirstAPI.Domain.Model.CarroAggregate;
 
-namespace FirstAPI.Controllers
+namespace FirstAPI.Controllers.v1
 {
     [ApiController]
-    [Route("api/v1/carro")]
+    [Route("api/v{version:apiVersion}/carro")]
+    [ApiVersion("1.0")]
     public class CarroController : ControllerBase
     {
         private readonly ICarroRepository _carroRepository;
@@ -59,7 +60,7 @@ namespace FirstAPI.Controllers
         public IActionResult Get(int pageNumber, int pageQuantity)
         {
             _logger.Log(LogLevel.Error, "Teve um erro");
-            
+
             var carros = _carroRepository.Get(pageNumber, pageQuantity);
 
             _logger.LogInformation("teste");

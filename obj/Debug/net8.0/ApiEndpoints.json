@@ -16,12 +16,17 @@
         "Name": "password",
         "Type": "System.String",
         "IsRequired": false
+      },
+      {
+        "Name": "api-version",
+        "Type": "System.String",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "FirstAPI.Controllers.CarroController",
+    "ContainingType": "FirstAPI.Controllers.v1.CarroController",
     "Method": "add",
     "RelativePath": "api/v1/carro",
     "HttpMethod": "POST",
@@ -47,7 +52,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "FirstAPI.Controllers.CarroController",
+    "ContainingType": "FirstAPI.Controllers.v1.CarroController",
     "Method": "Get",
     "RelativePath": "api/v1/carro",
     "HttpMethod": "GET",
@@ -68,7 +73,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "FirstAPI.Controllers.CarroController",
+    "ContainingType": "FirstAPI.Controllers.v1.CarroController",
     "Method": "Search",
     "RelativePath": "api/v1/carro/{id}",
     "HttpMethod": "GET",
@@ -84,9 +89,88 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "FirstAPI.Controllers.CarroController",
+    "ContainingType": "FirstAPI.Controllers.v1.CarroController",
     "Method": "DownloadPhoto",
     "RelativePath": "api/v1/carro/{id}/download",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FirstAPI.Controllers.v2.CarroController",
+    "Method": "add",
+    "RelativePath": "api/v2/carro",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Age",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Photo",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FirstAPI.Controllers.v2.CarroController",
+    "Method": "Get",
+    "RelativePath": "api/v2/carro",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "pageNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageQuantity",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FirstAPI.Controllers.v2.CarroController",
+    "Method": "Search",
+    "RelativePath": "api/v2/carro/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FirstAPI.Controllers.v2.CarroController",
+    "Method": "DownloadPhoto",
+    "RelativePath": "api/v2/carro/{id}/download",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -106,7 +190,13 @@
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "api-version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
     "ReturnTypes": [
       {
         "Type": "System.Collections.Generic.IEnumerable\u00601[[FirstAPI.WeatherForecast, FirstAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",

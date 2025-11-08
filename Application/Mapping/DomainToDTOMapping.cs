@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using FirstAPI.Domain.DTOs;
-using FirstAPI.Domain.Model;
+using FirstAPI.Domain.Model.CarroAggregate;
 
 public class DomainToDTOMapping : Profile
 {

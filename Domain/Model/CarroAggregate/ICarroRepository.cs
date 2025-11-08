@@ -1,6 +1,6 @@
 ﻿using FirstAPI.Domain.DTOs;
 
-namespace FirstAPI.Domain.Model
+namespace FirstAPI.Domain.Model.CarroAggregate
 {
     public interface ICarroRepository
     {
